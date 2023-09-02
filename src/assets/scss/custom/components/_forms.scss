@@ -2,3 +2,63 @@
     content: " *";
     color: red;
 }
+
+// blockUI Spinner
+
+.ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 103px;
+    height: 103px;
+    // background: #fff;
+    border-radius: 50%;
+}
+
+.shipImg {
+    width: 100px;
+    position: absolute;
+    left: 4%;
+    // top: 6px;
+    background: transparent;
+}
+
+.rotate {
+    animation: rotation 1s infinite linear;
+    width: auto;
+    height: 151px;
+    position: absolute;
+    left: -83px;
+    top: -24px;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes animateC {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(405deg);
+    }
+}

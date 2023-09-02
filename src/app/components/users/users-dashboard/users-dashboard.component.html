@@ -1,1 +1,33 @@
-<p>users-dashboard works!</p>
+<block-ui>
+    <!-- Header section -->
+
+    <div class="page-title-box">
+        <div class="container-fluid">
+            <div style="display: flex; justify-content: space-between;">
+                <a class="brand" [routerLink]='["/user-dashboard"]'>
+                    <img src="../../../../assets/images/shop.png" class="d-inline-block nav-image" alt="">
+                    Shopee
+                </a>
+                <app-header-profile-section></app-header-profile-section>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- cards -->
+    <ng-container>
+        <div class="row">
+            <div class="col-md-3" *ngFor="let item of allProducts">
+                <div class="card">
+                    <img class="card-img-top" src="{{item.images[0]}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <p class="card-text">{{item.description}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+</block-ui>

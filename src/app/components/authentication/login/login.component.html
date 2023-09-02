@@ -1,3 +1,4 @@
+<block-ui>
 <section class="vh-100" style="padding-top: 100px;">
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center">
@@ -8,13 +9,13 @@
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form [formGroup]="loginForm">
 
-          <!-- Email input -->
+          <!-- Username input -->
           <div class="form-outline mb-4">
-            <label class="form-label" class="required">Email</label>
-            <input type="email" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" formControlName="email" />
+            <label class="form-label" class="required">Username</label>
+            <input type="text" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Enter you Username" formControlName="userName" />
             <div
-              *ngIf="(this.loginForm.get('email')?.touched || this.loginForm.get('email')?.dirty) && this.loginForm.get('email')?.errors"
+              *ngIf="(this.loginForm.get('userName')?.touched || this.loginForm.get('userName')?.dirty) && this.loginForm.get('userName')?.errors"
               style="color: red;">Invaild Username</div>
 
           </div>
@@ -77,3 +78,4 @@
     <!-- Right -->
   </div>
 </section>
+</block-ui>

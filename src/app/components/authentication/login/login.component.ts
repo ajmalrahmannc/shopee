@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/networking/authentication/authentication.service';
+import { AuthenticationService } from 'src/networking/authentication/authentication.service';
 import { AlertService } from 'src/util/alert/alert.service';
+import { BlockService } from 'src/util/block_ui/block.service';
 
 @Component({
   selector: 'app-login',
@@ -14,43 +15,48 @@ export class LoginComponent implements OnInit {
   showPassword = false;
   loginForm !: FormGroup;
 
-  constructor(private fb : FormBuilder,private alert : AlertService , private auth:AuthenticationService, private router : Router) { }
+  constructor(private fb: FormBuilder, private alert: AlertService, private auth: AuthenticationService, private router: Router, private blockUi: BlockService) { }
 
   ngOnInit(): void {
     this.initializeLoginForm();
   }
 
-  initializeLoginForm (){
+  initializeLoginForm() {
     this.loginForm = this.fb.group({
-      email : ['',[Validators.required,Validators.email]],
-      password:['',Validators.required]
+      userName: ['', [Validators.required]],
+      password: ['', Validators.required]
     })
   }
-  
+
 
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
   }
 
-  login(){
+  login() {
 
-    if(this.loginForm.valid) {
+    this.blockUi.block()
+
+    if (this.loginForm.valid) {
 
       let postData = {
-        'email': this.loginForm.controls.email.value,
+        'username': this.loginForm.controls.userName.value,
         'password': this.loginForm.controls.password.value
       }
-      
-      this.auth.loginApi(postData).subscribe((res:any) => {
+
+      this.auth.loginApi(postData).subscribe((res: any) => {
+        this.blockUi.unblock()
         this.alert.success("Login Success");
         this.router.navigate(['user-dashboard'])
-      },(error) => {
+      }, (error: any) => {
+        this.blockUi.unblock()
         this.alert.error('Invalid Username or Password')
       })
 
     }
     else {
       this.alert.error('Please fill the required fields')
+      this.blockUi.unblock();
     }
   }
 

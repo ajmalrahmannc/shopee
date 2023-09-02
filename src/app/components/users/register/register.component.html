@@ -66,36 +66,48 @@
 
                     <div class=" row">
                         <div class="col-md-6">
-                            <label class="form-label required" style="font-size: x-small;">City</label>
-                            <input type="email" id="form3Example3" class="form-control form-control-sm"
-                                placeholder="Enter your City" formControlName="city" />
+                            <label class="form-label required" style="font-size: x-small;">Birth Date</label>
+                            <input type="date" id="form3Example3" class="form-control form-control-sm"
+                                placeholder="Enter your City" formControlName="dob" />
                                 <div
-                                *ngIf="(this.registerForm.get('city')?.touched || this.registerForm.get('city')?.dirty) && this.registerForm.get('city')?.errors"
-                                style="color: red;font-size: xx-small;">Invaild City</div>                      
+                                *ngIf="(this.registerForm.get('dob')?.touched || this.registerForm.get('dob')?.dirty) && this.registerForm.get('dob')?.errors"
+                                style="color: red;font-size: xx-small;">Invaild Date</div>                      
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label required" style="font-size: x-small;">Street</label>
-                            <input type="email" id="form3Example3" class="form-control form-control-sm"
-                                placeholder="Enter Your Street" formControlName="street" />
+                            <label class="form-label required" style="font-size: x-small;">Blood Group</label>
+                           
+                            <select name="" class="form-control" id="" formControlName="b_group">
+                                <option value="A+">A Positive</option>
+                                <option value="O+">O Positive</option>
+                                <option value="B+">B Positive</option>
+                                <option value="AB+">AB Positive</option>
+                                <option value="A-">A Negative</option>
+                                <option value="O-">O Negative</option>
+                                <option value="B-">B Negative</option>
+                                <option value="AB-">AB Negative</option>
+                            </select>
                                 <div
-                                *ngIf="(this.registerForm.get('street')?.touched || this.registerForm.get('street')?.dirty) && this.registerForm.get('street')?.errors"
-                                style="color: red;font-size: xx-small;">Invaild Street</div>                      
+                                *ngIf="(this.registerForm.get('b_group')?.touched || this.registerForm.get('streb_groupet')?.dirty) && this.registerForm.get('b_group')?.errors"
+                                style="color: red;font-size: xx-small;">Invaild Blood Group</div>                      
                         </div>
                     </div>
 
                     <div class=" row">
-                        <div class="col-md-6">
-                            <label class="form-label" style="font-size: x-small;">House No (optional)</label>
-                            <input type="email" id="form3Example3" class="form-control form-control-sm"
-                                placeholder="Enter your House No" formControlName="houseNo" />
+                        <div class="col-md-3">
+                            <label class="form-label" style="font-size: x-small;">Age</label>
+                            <input type="number" id="form3Example3" class="form-control form-control-sm"
+                                placeholder=" Age" formControlName="age" />
                                 <div
-                                *ngIf="(this.registerForm.get('houseNo')?.touched || this.registerForm.get('houseNo')?.dirty) && this.registerForm.get('houseNo')?.errors"
-                                style="color: red;font-size: xx-small;">Invaild House No</div>                      
+                                *ngIf="(this.registerForm.get('age')?.touched || this.registerForm.get('age')?.dirty) && this.registerForm.get('age')?.errors"
+                                style="color: red;font-size: xx-small;">Invaild Age</div>                      
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label " style="font-size: x-small;">Zip Code(optional)</label>
-                            <input type="email" id="form3Example3" class="form-control form-control-sm"
-                                placeholder="Enter Your Zip Code" formControlName="zip" />
+                            <label class="form-label " style="font-size: x-small;">Gender</label>
+                            <select name="" id="" formControlName="gender" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
                                 <div
                                 *ngIf="(this.registerForm.get('zip')?.touched || this.registerForm.get('zip')?.dirty) && this.registerForm.get('zip')?.errors"
                                 style="color: red;font-size: xx-small;">Invaild Zip</div>                      

@@ -1,0 +1,102 @@
+.dashCards {
+    border: none  !important;
+    padding: 33px 0px;
+    position: relative;
+    transition: transform .5s;
+    box-shadow: 0px 0px 35px -11px #d2d2d2b9;
+    cursor: pointer;
+}
+
+.dashCards .card-body {
+    text-align: center;
+}
+
+.dashArrow {
+    position: absolute;
+    right: 12px;
+    bottom: 9px;
+    background: #3051d3;
+    padding: 5px 9px;
+    color: #fff;
+    border-radius: 24px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.dashArrow i {
+    color: white;
+}
+
+.media {
+    display: inline-block;
+    text-align: center;
+}
+
+.icons-md i {
+    font-size: 30px;
+}
+
+.dashCards h5 {
+    font-size: 20px;
+    margin: 10px 0px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.dashCards:hover {
+    background: #3051d3;
+    color: #fff !important;
+    transform: scale(1.08);
+}
+
+.dashCards:hover i,
+.dashCards:hover h5{
+    color: #fff;
+}
+
+.dashCards:hover p{
+    color: #fff !important;
+}
+
+.dashCards:hover .dashArrow{
+    background-color: #fff !important;
+}
+
+.dashCards:hover .dashArrow i{
+    color: #3051d3 !important;
+}
+.custom_dropdown{
+    background: #3e5fe3;
+    border: 0px;
+    height: 39px;
+    padding: 0px 10px;
+    color: #fff;
+    border-radius: 23px;
+}
+.custom_dropdown select {
+    background: transparent;
+    border: 0px;
+    color: #fff;
+}
+.custom_dropdown option { 
+    color: #000 !important;
+}
+.header-profile-user {
+    height: 36px;
+    width: 36px;
+    padding: 2px;
+}
+.profile{
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
