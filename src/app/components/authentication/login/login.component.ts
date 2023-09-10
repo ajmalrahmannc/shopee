@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/networking/authentication/authentication.service';
 import { AlertService } from 'src/util/alert/alert.service';
 import { BlockService } from 'src/util/block_ui/block.service';
+import { LocalStorageService } from 'src/util/localStorage/local-storage.service';
+import { ValidateUserService } from 'src/util/validateUser/validate-user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,10 @@ export class LoginComponent implements OnInit {
   showPassword = false;
   loginForm !: FormGroup;
 
-  constructor(private fb: FormBuilder, private alert: AlertService, private auth: AuthenticationService, private router: Router, private blockUi: BlockService) { }
+  constructor(private fb: FormBuilder, private alert: AlertService, 
+    private auth: AuthenticationService, private router: Router, 
+    private blockUi: BlockService, private localStrSer:LocalStorageService,
+    private validateUser:ValidateUserService) { }
 
   ngOnInit(): void {
     this.initializeLoginForm();
@@ -47,7 +52,10 @@ export class LoginComponent implements OnInit {
       this.auth.loginApi(postData).subscribe((res: any) => {
         this.blockUi.unblock()
         this.alert.success("Login Success");
-        this.router.navigate(['user-dashboard'])
+        this.router.navigate(['user-dashboard']);
+        this.localStrSer.setUserId(res.id)
+        this.validateUser.setValidateUser(true);
+
       }, (error: any) => {
         this.blockUi.unblock()
         this.alert.error('Invalid Username or Password')

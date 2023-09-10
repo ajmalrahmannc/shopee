@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderProfileSectionComponent } from './header-profile-section/header-profile-section.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -9,7 +11,10 @@ import { HeaderProfileSectionComponent } from './header-profile-section/header-p
     HeaderProfileSectionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     HeaderProfileSectionComponent

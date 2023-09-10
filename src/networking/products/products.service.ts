@@ -9,8 +9,13 @@ export class ProductsService {
 
   constructor(private http:HttpClient) { }
 
-  getAllProducts(){
-    let API_URL = `${environment.baseUrl}/products`;
+  getAllProducts(limit:number,skip:number){
+    let API_URL = `${environment.baseUrl}/products?limit=${limit}&skip=${skip}`;
+    return this.http.get<any>(API_URL);
+  }
+
+  getAllCategories() {
+    let API_URL = `${environment.baseUrl}/products/categories`;
     return this.http.get<any>(API_URL);
   }
 }

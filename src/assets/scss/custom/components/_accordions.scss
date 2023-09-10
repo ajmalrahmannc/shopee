@@ -1,0 +1,25 @@
+
+/* accordion.scss */
+
+
+.custom-accordion {
+
+    .card{
+      border: 1px solid white !important;
+      border-radius: 10px !important;
+    }
+  
+    a {
+      .accor-plus-icon {
+        font-size: 18px;
+      }
+        &.collapsed {
+            i.accor-plus-icon {
+                &:before {
+                    content: "\F140";
+                }
+            }
+        }
+    }
+  }
+  

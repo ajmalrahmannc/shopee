@@ -1,23 +1,96 @@
-.nav-image {
+.categories-card {
+    text-align: center;
+    width: max-content;
     height: 60px;
-    width: 60px;
-    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    
 }
-.brand {
-    padding: 20px;
-    font-style: normal;
-    text-decoration: none;
-    color: black;
+
+.category-item {
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid aliceblue;
+    margin: 5px;
+    transition: transform 100ms;
 }
-.page-title-box{
-    background-color: aliceblue;
+
+.category-item:hover{
+    transform: scale(1.19);    
 }
-.card {
+
+.category-item span {
+    font-weight: bolder;
+    color: white;
+    margin: 10px;
+    display: inline-flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.main-card{
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    margin: 5px;
+}
+
+.main-card h6 {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.main-card::-webkit-scrollbar{
+    display: none;
+}
+
+.product-card {
     width: 20rem;
     height: 35rem;
-    margin: 20px;
-    padding: 20px;
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid aliceblue;
 }
 .card-img-top {
     height: 17rem;
+    transition: transform 400ms;
+}
+.card-img-top:hover {
+    transform: scale(1.09);
+}
+.carousel-image {
+    width: 100%;
+    padding: 20px;
+    border-radius: 30px;
+    // image-rendering: pixelated;
+    // object-fit: cover;
+    // height: 500px;
+}
+.product-price {
+    color: gray;
+    font-weight: bold;
+}
+.product-rating {
+    background-color: #26a541;
+    color: white;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: smaller;
+    font-weight: bold;
+}
+.single-row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.product-discount {
+    color: orangered;
+    font-size: x-small;
+    font-weight: normal;
+}
+.few-left-alert {
+    font-weight: bold;
+    color: rgb(228, 59, 26);
+    font-size: small;
 }
