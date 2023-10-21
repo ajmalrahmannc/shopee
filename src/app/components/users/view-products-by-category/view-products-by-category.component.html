@@ -1,0 +1,34 @@
+<block-ui>
+        <!-- cards -->
+        <ng-container>
+            <div class="card m-2">
+                <div class="card-body row">
+                    <div class="col-md-3" *ngFor="let item of allProducts ">
+                        <div class="product-card" (click)="viewSingleItem(item.id)">
+                            <img class="card-img-top" src="{{item.images[0]}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.title}}</h5>
+                                
+                                <div class="single-row">
+                                    <span class="product-price">{{item.price | currency:'$'}} <span class="product-discount">({{item.discountPercentage}}% OFF)</span> </span>
+                                    <span class="product-rating">{{item.rating}}
+                                        <a class="text-white">
+                                            <i class="fa-solid fa-star"></i>
+                                        </a>
+                                    </span>
+    
+                                </div>
+                                <p class="card-text">{{item.description}}</p>
+                                <span *ngIf="item.stock <= 50" class="few-left-alert"> Only Few Left!</span>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="pagination justify-content-end ">
+                    <pagination-controls class="pagination justify-content-end" (pageChange)="onChangePage($event)">
+                    </pagination-controls>
+                 </div> -->
+            </div>
+        </ng-container>
+</block-ui>

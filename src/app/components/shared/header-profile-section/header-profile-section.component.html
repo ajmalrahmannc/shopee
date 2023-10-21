@@ -1,62 +1,77 @@
-<div class="profile" style="display: flex;justify-content: flex-end; min-width: 10rem;">
+<!-- Header section -->
 
-    <div class="dropdown">
-        <button
-          class="btn btn-primary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Dropdown button
-        </button>
-        <div class="dropdown-menu row" aria-labelledby="dropdownMenuButton">
-            <div class="col-md-12">
-                <h2>hi</h2>
+<div class="page-title-box">
+    <div class="container-fluid">
+        <div style="display: flex; justify-content: space-between;">
+            <a class="brand" [routerLink]="['/user-dashboard']" routerLinkActive="router-link-active">
+                <img src="../../../../assets/images/shop.png" class="d-inline-block nav-image" alt="">
+                <span class="main-heading">Shopee</span>
+            </a>
+
+            <ng-container *ngIf="showUserDetails">
+
+            <div class="nav-items">
+                <ul class="nav-item">
+                    <li class="gadgets dropdown d-inline-block">
+                        <a id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="true"> Gadgets</a>
+                        <div class="dropdown-menu dropdown-menu-right gadgets-dropdown">
+                            <!-- item-->
+                            <a class="dropdown-item"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1"></i>
+                                Profile</a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"><i class="mdi mdi-logout font-size-16 align-middle mr-1"></i>
+                                Logout</a>
+                        </div>
+                    </li>
+                    <li class="skincare">Skincare</li>
+                    <li class="fashion">Fashion</li>
+                    <li class="groceries">Groceries</li>
+                </ul>
             </div>
+
+            <!-- <div class="profile" style="display: flex;justify-content: flex-end; min-width: 10rem;">
+
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div> -->
+
+            <div class="cart-main">
+                <div class="cart">
+                    <img src="../../../../assets/images/shopping-cart.png" alt="no-image">
+                </div>
+            </div>
+
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn  " id="page-header-user-dropdown" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user   ml-4" src="{{userDetails?.image}}"
+                        alt="Header Avatar" />
+                    <span class="d-none d-sm-inline-block ml-2">{{userDetails?.username}}</span>
+                    <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <!-- item-->
+                    <a class="dropdown-item"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1"></i>
+                        Profile</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" (click)="logout()"><i class="mdi mdi-logout font-size-16 align-middle mr-1"></i>
+                        Logout</a>
+                </div>
+            </div>
+        </ng-container>
         </div>
-        <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul> -->
-      </div>
-  
-      <div class="dropdown d-inline-block">
-        <button
-          type="button"
-          class="btn  "
-          id="page-header-user-dropdown"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <img
-            class="rounded-circle header-profile-user   ml-4"
-            src="../../../../assets/images/shop.png"
-            alt="Header Avatar"
-          />
-          <span
-            class="d-none d-sm-inline-block ml-2"
-            >User</span
-          >
-          <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <!-- item-->
-          <a class="dropdown-item"
-            ><i
-              class="mdi mdi-face-profile font-size-16 align-middle mr-1"
-            ></i>
-            Profile</a
-          >
-  
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" 
-            ><i class="mdi mdi-logout font-size-16 align-middle mr-1"></i>
-            Logout</a
-          >
-        </div>
-      </div>
+
     </div>
-  
+</div>
