@@ -1,0 +1,67 @@
+<block-ui>
+
+    <!-- <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+  </nav> -->
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card mt-3 ml-4 container-fluid">
+                <ng-container *ngIf="images">
+                    <ngb-carousel>
+                        <ng-template ngbSlide *ngFor="let image of images ; let i = index">
+                            <div class="picsum-img-wrapper">
+                                <img [src]="images[i]" alt="Random slides" />
+                            </div>
+                        </ng-template>
+                    </ngb-carousel>
+                </ng-container>
+
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="card m-3">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink="/user-dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a routerLink="">{{productDetails?.category}}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{productDetails?.title}}</li>
+                    </ol>
+                </nav>
+
+                <div class="container">
+
+                    <h3 class="produnct_name">{{productDetails?.title}}</h3>
+                    
+                    <h5 class="product_description">{{productDetails?.description}}</h5>
+
+                    <span class="product-rating">{{productDetails?.rating}}
+                        <a class="text-white">
+                            <i class="fa-solid fa-star" style="color: #03a685;"></i>
+                        </a>
+                    </span>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="price">{{productDetails?.price | currency:"$"}}</span>
+                            <span class="mrp ml-3">MRP : <span class="mrp-price"> {{productDetails?.price / (1 - (productDetails?.discountPercentage/100)) | currency:"$"}} </span> </span>
+                            <span class="offer">( {{(productDetails?.price / (1 - (productDetails?.discountPercentage/100))) - productDetails?.price | currency:"$"}} OFF)</span>
+                        </div>
+                    </div>
+                    <span class="tax">Inclusive of all taxes</span>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</block-ui>

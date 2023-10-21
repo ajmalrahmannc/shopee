@@ -4,7 +4,7 @@
     <div class="card main-card">
         <!-- <h6>Categories</h6> -->
         <div class="categories-card">
-            <div class="category-item" *ngFor="let category of allCategories" [ngStyle]="{background:category.bgColor}">
+            <div class="category-item" *ngFor="let category of allCategories" [ngStyle]="{background:category.bgColor}" (click)="getProducts(category)">
                 <!-- <img src="" class="category-image" alt="image"><br> -->
                 <span>{{category.name}}</span>
             </div>
@@ -33,7 +33,7 @@
         <div class="card m-2">
             <div class="card-body row">
                 <div class="col-md-3" *ngFor="let item of allProducts | paginate:configPagination">
-                    <div class="product-card">
+                    <div class="product-card" (click)="viewSingleItem(item.id)">
                         <img class="card-img-top" src="{{item.images[0]}}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{item.title}}</h5>

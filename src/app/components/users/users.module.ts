@@ -8,11 +8,15 @@ import { SharedModule } from "../shared/shared.module";
 import { BlockUIModule } from 'ng-block-ui';
 import { BlockTemplateComponent } from 'src/util/block_ui/block-template.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { ViewProductComponent } from './view-product/view-product.component';
+import { ViewProductsByCategoryComponent } from './view-products-by-category/view-products-by-category.component';
 
 
 @NgModule({
     declarations: [
         UsersDashboardComponent,
+        ViewProductComponent,
+        ViewProductsByCategoryComponent,
     ],
     imports: [
         CommonModule,

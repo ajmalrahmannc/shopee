@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbCarouselConfig , NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
 import { BannerImages } from 'src/app/Constants/banner-images';
 import { DEFAULT_ITEM_PER_PAGE } from 'src/app/Constants/global';
@@ -24,6 +25,7 @@ export class UsersDashboardComponent implements OnInit {
     itemsPerPage: DEFAULT_ITEM_PER_PAGE,
     totalItems: 0
   };
+  singleItem :any[] = [];
 
 
   showNavigationArrows = false;
@@ -32,7 +34,7 @@ export class UsersDashboardComponent implements OnInit {
   carouselImages = [BannerImages.banner1,BannerImages.banner2,BannerImages.banner3].map((n) => `https://rukminim1.flixcart.com/fk-p-flap/1400/200/image/${n}`);
 
   constructor(private productSer:ProductsService,private blockUi:BlockService,private alert : AlertService,
-    private config : NgbCarouselConfig) {
+    private config : NgbCarouselConfig, private router: Router,private product : ProductsService) {
     config.showNavigationArrows = true;
 		config.showNavigationIndicators = true;
    }
@@ -90,5 +92,12 @@ export class UsersDashboardComponent implements OnInit {
     this.getAllProducts(this.currentPage);
   }
 
+  viewSingleItem(id:number){
+    this.router.navigate(['/user-dashboard/view-product/',id]);
+  }
+
+  getProducts(category:any) {
+    this.router.navigate(['/user-dashboard/view-products-by-category/',category.name]);
+  }
   
 }

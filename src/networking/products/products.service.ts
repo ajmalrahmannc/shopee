@@ -18,4 +18,14 @@ export class ProductsService {
     let API_URL = `${environment.baseUrl}/products/categories`;
     return this.http.get<any>(API_URL);
   }
+
+  getSingleProductById(id:number) {
+    let API_URL = `${environment.baseUrl}/products/${id}`;
+    return this.http.get<any>(API_URL);
+  }
+
+  getProductsByCategory(name:string) {
+    let API_URL = `${environment.baseUrl}/products/category/${name}`;
+    return this.http.get<any>(API_URL);
+  }
 }
